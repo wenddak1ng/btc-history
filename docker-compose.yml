@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  client:
+    build: ./ui
+    ports:
+      - 5173:5173
+    volumes:
+      - ./ui:/data
+
+  server:
+    build: ./api
+    ports:
+      - 8080:8080
+    volumes:
+      - ./api:/data
